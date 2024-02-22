@@ -1,154 +1,68 @@
-# ERPNext Fiscal Year Based Date Related Fields
+<a href="https://grow.empress.eco/">Explore the Docs</a>
+·
+<a href="https://github.com/empress-eco/fiscal_year_based_date_related_fields/issues">Report Bug</a>
+·
+<a href="https://github.com/empress-eco/fiscal_year_based_date_related_fields/issues">Request Feature</a>
 
-ERPNext plugin that makes date related fields respect the start and end dates of default fiscal year.
+## About The Project
 
-In ERPNext, date related fields show the current date and there is nothing wrong with that, but if you are entering historical data manually then you might end up forgetting to change the date related fields to match the default active **Fiscal Year**.
-For such reason I created this to help myself and others with such issue.
+### 📖 Project Overview
+The Empress Fiscal Year Based Date Field Validator is an indispensable tool for Empress users who manually input historical data. This plugin ensures that date-related fields align with the start and end dates of your default fiscal year, protecting you from mistakenly inputting data into incorrect periods.
 
----
+### 🌟 Key Features
+- Guarantees accuracy in data entry 
+- Simplifies the process of historical data input
+- Supports Date, Datetime, and Date Range fields
 
-### Table of Contents
-<ul>
-    <li><a href="#requirements">Requirements</a></li>
-    <li>
-    <a href="#setup">Setup</a>
-        <ul>
-            <li><a href="#install">Install</a></li>
-            <li><a href="#update">Update</a></li>
-            <li><a href="#uninstall">Uninstall</a></li>
-        </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#supported-fields">Supported Fields</a></li>
-    <li><a href="#license">License</a></li>
-</ul>
+### 👥 Target Audience
+This project is ideal for Empress users, data entry clerks, and finance professionals who manage historical data.
 
----
+### 🛠 Built With
+This project is a plugin for Empress and utilizes the Framework.
 
-### Requirements
-- Frappe >= v13.0.0
-- ERPNext >= v13.0.0
+## Technical Stack and Setup Instructions
 
----
+### Prerequisites
+Ensure you have the following versions or higher:
+- Empress >= v13.0.0
+- Empress >= v13.0.0
 
-### Setup
+### Installation
+Follow these simplified steps to install the plugin:
 
-#### Install
-
-⚠️ *Important* ⚠️
-
-*Do not forget to replace [sitename] with the name of your site in all commands.*
-
-#### Install
-1. Go to bench directory
-
+1. Navigate to the bench directory:
+```sh
+cd ~/Empress-bench
 ```
-cd ~/frappe-bench
+2. Clone the plugin from Github:
+```sh
+bench get-app https://github.com/empress-eco/fiscal_year_based_date_related_fields.git
 ```
-
-2. Get plugin from Github
-
-*(Required only once)*
-
+3. Build the plugin:
+```sh
+bench build --apps Empress_fiscal_year_based_date_related_fields
 ```
-bench get-app https://github.com/kid1194/ERPNext-Fiscal-Year-Based-Date-Related-Fields
+4. Install the plugin on your desired site (replace [sitename] with your site's name):
+```sh
+bench --site [sitename] install-app Empress_fiscal_year_based_date_related_fields
 ```
 
-3. Build plugin
+## Usage
+To align date-related fields with the default Fiscal Year, navigate to Customization > Customize Form. Enter the form type/name (e.g., 'Journal Entry'), scroll down to the form fields area and edit the desired date-related fields. Add **Fiscal Year** in the **options** property of those fields to enable the plugin.
 
-*(Required only once)*
+## Contribution Guidelines
+We warmly welcome and appreciate contributions! Here's how you can contribute:
 
-```
-bench build --apps erpnext_fiscal_year_based_date_related_fields
-```
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-4. Install plugin on a specific site
+## License and Acknowledgements
 
-```
-bench --site [sitename] install-app erpnext_fiscal_year_based_date_related_fields
-```
+### License
+This project is under the MIT License. Your contributions are also licensed under the MIT License.
 
-5. Check the usage section below
-
-#### Update
-1. Go to app directory
-
-```
-cd ~/frappe-bench/apps/erpnext_fiscal_year_based_date_related_fields
-```
-
-2. Get updates from Github
-
-```
-git pull
-```
-
-3. Go to bench directory
-
-```
-cd ~/frappe-bench
-```
-
-4. Build plugin
-
-```
-bench build --apps erpnext_fiscal_year_based_date_related_fields
-```
-
-5. Update a specific site
-
-```
-bench --site [sitename] migrate
-```
-
-6. Restart bench
-
-```
-bench restart
-```
-
-#### Uninstall
-1. Go to bench directory
-
-```
-cd ~/frappe-bench
-```
-
-2. Uninstall plugin from a specific site
-
-```
-bench --site [sitename] uninstall-app erpnext_fiscal_year_based_date_related_fields
-```
-
-3. Remove plugin from bench
-
-```
-bench remove-app erpnext_fiscal_year_based_date_related_fields
-```
-
-4. Restart bench
-
-```
-bench restart
-```
-
----
-
-### Usage
-*How to make date related fields respect the default Fiscal Year*
-1. Go to Customization > Customize Form
-2. Enter the form type/name (ex: 'Journal Entry')
-3. Scroll down to the form fields area and edit the date related fields you want
-4. Add **Fiscal Year** in the **options** property of those fields to enable the plugin
-
----
-
-#### Supported Fields
-1. Date
-2. Datetime
-3. Date Range
-
----
-
-#### License
-MIT
+### Acknowledgements
+We extend our profound gratitude to the Empress Community for their foundational work, innovation, and ongoing support that power this project. Your dedication is instrumental in enhancing our functionalities and driving our success. Thank you!
